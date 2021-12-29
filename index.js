@@ -1,29 +1,29 @@
-/** let name = prompt('Your name?', " ");
+let name = prompt('Your name?', " ");
 let age = prompt('How old are you?', 100);
 
 alert(`Welcome ${name}, You are ${age} years old!`);
 
-
-/** function multiplyMe(a, b) {
+/** 
+function multiplyMe(a, b) {
 let newValue = (a**b);
 return newValue;
 }
 multiplyMe(4, 2);
 
 let myQuestion = confirm ("is the question correct?");
-alert ("Thank you for your honest reply"); **/
+alert ("Thank you for your honest reply"); */
 
 //conditional modal
-/*
+
 let conf = confirm("You must be at least 18 years old to view this content.");
 let userName = prompt("What's your name?");
-let age = prompt("What's your age?");
+let userAge = prompt("What's your age?");
 
-if (age >= 18) {
+if (userAge >= 18) {
   alert("Welcome! " + userName);
 } else {
   alert("Sorry, you must be at least 18 years old to view this content.");
-} */
+}
 
 // Arithmetic Operations
 

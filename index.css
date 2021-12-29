@@ -9,7 +9,8 @@ header {
 .flex-container {
   display: flex;
   padding: 15px;
-  /* margin: 10px; */
+  margin: 10px;
+  border: 1px solid rgb(105, 105, 102);
 }
 
 .box {
@@ -46,8 +47,17 @@ option{
 .weather{
   border: 2px solid black;
   padding: 15px;
-  margin: auto;
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin: 10px;
+}
+
+.background{
+  border: 2px solid rgb(85, 30, 30);
+  padding: 15px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
 }
