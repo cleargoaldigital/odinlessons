@@ -15,15 +15,15 @@ alert ("Thank you for your honest reply"); */
 
 //conditional modal
 
-let conf = confirm("You must be at least 18 years old to view this content.");
-let userName = prompt("What's your name?");
-let userAge = prompt("What's your age?");
+// let conf = confirm("You must be at least 18 years old to view this content.");
+// let userName = prompt("What's your name?");
+// let userAge = prompt("What's your age?");
 
-if (userAge >= 18) {
-  alert("Welcome! " + userName);
-} else {
-  alert("Sorry, you must be at least 18 years old to view this content.");
-}
+// if (userAge >= 18) {
+//   alert("Welcome! " + userName);
+// } else {
+//   alert("Sorry, you must be at least 18 years old to view this content.");
+// }
 
 // Arithmetic Operations
 
@@ -51,11 +51,11 @@ function setWeather() {
   } else if (choice === 'overcast') {
     para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
   } else {
-    para.textContent = '';
+    para.textContent = ' ';
   }
 }
 
-// // Dark mode
+// Dark mode
 
 // const select = document.getElementById('theme');
 // const html = document.querySelector('html');
@@ -96,3 +96,73 @@ function setWeather() {
 //       default:
 //         return "Something went horribly wrong...";
 //       }
+
+
+// Function declaration
+
+// const ask = function(question, yes, no){
+//   if(confirm(question)){
+//     return yes()
+//   } else{
+//     return no()
+//   }
+// }
+// function showOk(){
+//   alert("You agreed.")
+// }
+// function showCancel(){
+//   alert("You aborted the process.");
+// }
+
+// ask("Will Nigeria be better?", showOk, showCancel);
+
+// let sum = (x, y) => x + y;
+
+// alert(sum(1, 2));
+
+
+// Arrow Function
+
+let ask = (question, yes, no) => confirm(question) ? alert(yes) : alert(no);
+ask("Do you agree?", "You agreed.", "You canceled the execution.");
+
+// Practice Questions
+/** Write a function called add7 that takes one number and returns that number + 7.
+ * 
+Write a function called multiply that takes 2 numbers and returns their product.
+
+Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+
+Write a function called lastLetter that takes a string and returns the very last letter of that string:
+lastLetter("abcd") should return "d" */
+
+// add values
+
+ function add7(a){
+   return a +7;
+ }
+ add7(9)
+
+// multiply values
+
+ function multiply(a,b){
+   let result = a*b;
+   return result
+ }
+ multiply(9,8);
+
+// capitalize string
+
+ function capitalize(word){
+  //  return word.toUpperCase(0);
+   return word.charAt(0).toUpperCase()+word.slice(1);
+ }
+ capitalize("taofeek");
+
+// find last letter
+
+ function lastLetter(word){
+  let result = word.charAt(word.length-1);
+  return result;
+}
+lastLetter("taofeek");
