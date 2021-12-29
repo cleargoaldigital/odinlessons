@@ -23,16 +23,18 @@ if (age >= 18) {
   alert("Welcome! " + userName);
 } else {
   alert("Sorry, you must be at least 18 years old to view this content.");
-}
+} */
 
-let a = 3;
-let x = (100 + 50) * a;
-document.getElementById("demo").innerHTML = x;
-**/
+// Arithmetic Operations
+
+// let a = 3;
+// let x = (100 + 50) * a;
+// document.getElementById("demo").innerHTML = x;
+
 
 //weather conditions
 
-const select = document.querySelector('select');
+const select = document.getElementById('weather');
 const para = document.getElementById('comment');
 
 select.addEventListener('change', setWeather);
@@ -53,44 +55,44 @@ function setWeather() {
   }
 }
 
-// Dark mode
+// // Dark mode
 
-const select = document.getElementById('theme');
-const html = document.querySelector('html');
-document.body.style.padding = '10px';
+// const select = document.getElementById('theme');
+// const html = document.querySelector('html');
+// document.body.style.padding = '10px';
 
-function update(bgColor, textColor) {
-  html.style.backgroundColor = bgColor;
-  html.style.color = textColor;
-}
+// function update(bgColor, textColor) {
+//   html.style.backgroundColor = bgColor;
+//   html.style.color = textColor;
+// }
 
-select.addEventListener('change', () => (select.value === 'black') ? update('black', 'white'): update('white', 'black'));
+// select.addEventListener('change', () => (select.value === 'black') ? update('black', 'white'): update('white', 'black'));
 
-// Set the current day of the week to a variable, with 0 being Sunday and 6 being Saturday
-const day = new Date().getDay();
+// // Set the current day of the week to a variable, with 0 being Sunday and 6 being Saturday
+// const day = new Date().getDay();
 
-switch (day) {
-  case 0:
-    return "It's Sunday, time to relax!";
-      break;
-      case 1:
-        return "Happy Monday!";
-        break;
-      case 2:
-        return "It's Tuesday. You got this!";
-        break;
-      case 3:
-        return "Hump day already!";
-        break;
-      case 4:
-        return "Just one more day 'til the weekend!";
-        break;
-      case 5:
-        return "Happy Friday!";
-        break;
-      case 6:
-        return "Have a wonderful Saturday!";
-        break;
-      default:
-        return "Something went horribly wrong...";
-      }
+// switch (day) {
+//   case 0:
+//     return "It's Sunday, time to relax!";
+//       break;
+//       case 1:
+//         return "Happy Monday!";
+//         break;
+//       case 2:
+//         return "It's Tuesday. You got this!";
+//         break;
+//       case 3:
+//         return "Hump day already!";
+//         break;
+//       case 4:
+//         return "Just one more day 'til the weekend!";
+//         break;
+//       case 5:
+//         return "Happy Friday!";
+//         break;
+//       case 6:
+//         return "Have a wonderful Saturday!";
+//         break;
+//       default:
+//         return "Something went horribly wrong...";
+//       }
