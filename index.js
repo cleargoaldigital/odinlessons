@@ -1,7 +1,7 @@
-let name = prompt('Your name?', " ");
-let age = prompt('How old are you?', 100);
+// let name = prompt('Your name?', " ");
+// let age = prompt('How old are you?', 100);
 
-alert(`Welcome ${name}, You are ${age} years old!`);
+// alert(`Welcome ${name}, You are ${age} years old!`);
 
 /** 
 function multiplyMe(a, b) {
@@ -34,7 +34,7 @@ alert ("Thank you for your honest reply"); */
 
 //weather conditions
 
-const select = document.getElementById('weather');
+/** const select = document.getElementById('weather');
 const para = document.getElementById('comment');
 
 select.addEventListener('change', setWeather);
@@ -138,61 +138,133 @@ lastLetter("abcd") should return "d" */
 
 // add values
 
- function add7(a){
-   return a +7;
- }
- add7(9)
+//  function add7(a){
+//    return a +7;
+//  }
+//  add7(9)
 
-// multiply values
+// // multiply values
 
- function multiply(a,b){
-   let result = a*b;
-   return result
- }
- multiply(9,8);
+//  function multiply(a,b){
+//    let result = a*b;
+//    return result
+//  }
+//  multiply(9,8);
 
-// capitalize string
+// // capitalize string
 
- function capitalize(word){
-  //  return word.toUpperCase(0);
-   return word.charAt(0).toUpperCase()+word.slice(1);
- }
- capitalize("taofeek");
+//  function capitalize(word){
+//   //  return word.toUpperCase(0);
+//    return word.charAt(0).toUpperCase()+word.slice(1);
+//  }
+//  capitalize("taofeek");
 
-// find last letter
+// // find last letter
 
- function lastLetter(word){
-  let result = word.charAt(word.length-1);
-  return result;
-}
-lastLetter("taofeek");
+//  function lastLetter(word){
+//   let result = word.charAt(word.length-1);
+//   return result;
+// }
+// lastLetter("taofeek");
 
-// Fizzbuzz
+// // Fizzbuzz
 
-let userInput = parseInt(prompt("Please enter the number you'd like to FizzBuzz up to: "));
+// let userInput = parseInt(prompt("Please enter the number you'd like to FizzBuzz up to: "));
 
-for (let i = 1; i <= userInput; i++) {
-  if (i % 3 === 0 && i % 5 === 0) {
-    console.log("FizzBuzz");
-  } else if (i % 3 === 0) {
-    console.log("Fizz");
-  } else if (i % 5 === 0) {
-    console.log("Buzz");
-  } else {
-    console.log(i);
-  }
-}
+// for (let i = 1; i <= userInput; i++) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log("FizzBuzz");
+//   } else if (i % 3 === 0) {
+//     console.log("Fizz");
+//   } else if (i % 5 === 0) {
+//     console.log("Buzz");
+//   } else {
+//     console.log(i);
+//   }
+// }
 
-// Coderbyte challenge
+// // Coderbyte challenge
 
-// First Factorial
-// Have the function FirstFactorial(num) take the num parameter being passed and return the factorial of it. For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24. For the test cases, the range will be between 1 and 18 and the input will always be an integer.
+// // First Factorial
+// // Have the function FirstFactorial(num) take the num parameter being passed and return the factorial of it. For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24. For the test cases, the range will be between 1 and 18 and the input will always be an integer.
 
-function FirstFactorial(num) { 
-  let result = 1;
-    // code goes here  
-    for(let i =1; i<= num; i++){
-    result *= i;
+// function FirstFactorial(num) { 
+//   let result = 1;
+//     // code goes here  
+//     for(let i =1; i<= num; i++){
+//     result *= i;
+//     }
+//     return result
+//   } */
+
+  // Number Guessing from MDN
+
+  let randomNumber = Math.floor(Math.random()) + 1;
+
+  const guesses = document.querySelector('.guesses');
+  const lastResult = document.querySelector('.lastResult');
+  const lowOrHi = document.querySelector('lowOrHi');
+  const guessSubmit = document.querySelector('.guessSubmit');
+  const guessField = document.querySelector('.guessField');
+
+  let guessCount = 1;
+  let resetButton;
+
+  function checkGuess() {
+
+    const userGuess = Number(guessField.value);
+    if(guessCount === 1) {
+      guesses.textContent = 'Previous guesses: ';
     }
-    return result
+    guesses.textContent += userGuess + ' ';
+
+    if(userGuess === randomNumber) {
+      lastResult.textContent = 'Congratulations! You got it right!';
+      lastResult.style.backgroundColor = 'green';
+      lowOrHi.textContent = '';
+      setGameOver();
+    } else if(guessCount === 10) {
+      lastResult.textContent = '!!!GAME OVER!!!';
+      setGameOver();
+    } else {
+      lastResult.textContent = 'Wrong!';
+      lastResult.style.backgroundColor = 'red';
+      if(userGuess < randomNumber) {
+        lowOrHi.textContent = 'Last guess was too low!';
+      } else if(userGuess > randomNumber) {
+        lowOrHi.textContent = 'Last guess was too high!';
+      }
+    }
+
+    guessCount++;
+    guessField.value = '';
+    guessField.focus();
+  }
+  guessSubmit.addEventListener('click', checkGuess);
+
+  function setGameOver() {
+	  guessField.disabled = true;
+	  guessSubmit.disabled = true;
+	  resetButton = document.createElement('button');
+	  resetButton.textContent = 'Start new game';
+	  document.body.appendChild(resetButton);
+	  resetButton.addeventListener('click', resetGame);
+  }
+
+  function resetGame() {
+	  guessCount = 1;
+    const resetParas = document.querySelectorAll('.resultParas p');
+    for (const resetPara of resetParas) {
+      resetPara.textContent = '';
+    }
+	  resetButton.parentNode.removeChild(resetButton);
+
+	  guessField.disabled = false;
+	  guessSubmit.disabled = false;
+	  guessField.value = '';
+	  guessField.focus();
+
+	  lastResult.style.backgroundColor = 'white';
+
+	  randomNumber = Math.floor(Math.random()) + 1;
   }
